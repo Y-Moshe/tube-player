@@ -9,7 +9,7 @@
             <h2>{{video.description}}</h2>
         </div>
         <div>
-            <button>Play</button>
+            <button class="primary-btn">Play</button>
         </div>
         
     </section>
