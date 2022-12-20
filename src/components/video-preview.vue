@@ -1,15 +1,16 @@
 <template>
-    <section class="video-preview-container">
-        <h1>video preview</h1>
+    <section class="video-preview-container flex">
         <div class="thumbnail">
             <img :src="video.thumbnailUrl">
         </div>
-        <div class="info">
-            <h2>{{video.title}}</h2>
-            <h2>{{video.description}}</h2>
-        </div>
         <div>
-            <button @click="$emit('onPlay', video)" class="primary-btn">Play</button>
+            <div class="info">
+                <h4 class="title">{{video.title}}</h4>
+                <h4 class="desc">{{video.description}}</h4>
+            </div>
+            <div>
+                <button @click="$emit('onPlay', video)" class="primary-btn">Play</button>
+            </div>
         </div>
         
     </section>

@@ -1,6 +1,5 @@
 <template>
     <section class="video-list-container">
-        <h1>video list</h1>
         <ul class="video-list clean-list">
             <li v-for="video in videos">
                 <video-preview @onPlay="$emit('play', $event)" :video="video" :key="video.id"/>

@@ -22,3 +22,16 @@
   grid-template-columns: 1fr 1fr;
   margin-block: 25px;
 }
+
+.video-preview-container {
+  gap: 20px;
+  margin-bottom: 36px;
+}
+
+.video-preview-container .title{
+  font-size: 20px;
+  margin-bottom: 20px;
+  margin-top: 0;
+}
+
+
