@@ -3,26 +3,31 @@
     <search-bar v-model="querySearch" @change="handleSearch" />
 
     <div class="videos-container">
-      <videos-list :videos="videos"/>
+      <videos-list :videos="videos" @play="handleVideoPlay" />
+      <video-player :video="currentPlay" />
     </div>
   </main>
 </template>
 
 <script>
-import videosList from '../components/videos-list.vue';
-import searchBar from '../components/search-bar.vue'
 import { ytService} from '../services/youtube.service'
+
+import videosList from '../components/videos-list.vue'
+import searchBar from '../components/search-bar.vue'
+import videoPlayer from '../components/video-player.vue'
 
 export default {
   name: 'playlist-app',
   components: {
     videosList,
-    searchBar
+    searchBar,
+    videoPlayer
   },
   data() {
     return {
       querySearch: '',
-      videos: []
+      videos: [],
+      currentPlay: null
     }
   },
   methods: {
@@ -32,6 +37,9 @@ export default {
       const videos = await ytService.getYouTubeVideos(query)
       console.log('videos', videos)
       this.videos = videos
+    },
+    handleVideoPlay(video) {
+      this.currentPlay = video
     }
   }
 }
