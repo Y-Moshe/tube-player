@@ -1,14 +1,13 @@
-'use strict'
+import axios from 'axios'
 
-const API_KEY = 'AIzaSyB2GiAeNACMpam858AZjuI-tmLiXfg6EsE'
+import { utilService } from './util.service'
 
+const API_KEY = process.env.GOOGLE_TY_API_KEY
 const YOUTUBE_RES_STORAGE_KEY = 'ytCache'
 
-const ytCache = loadFromStorage(YOUTUBE_RES_STORAGE_KEY) || {}
+const ytCache = utilService.loadFromStorage(YOUTUBE_RES_STORAGE_KEY) || {}
 
-var gYTRes = ytCache || {}
-
-function getYouTubeRes(txt) {
+function getYouTubeVideos(txt) {
 
     if (ytCache[txt]) {
         console.log('fetching from YT cache');
@@ -36,4 +35,8 @@ function getYouTubeRes(txt) {
 
 function _getYTUrl(searchTerm) {
     return `https://www.googleapis.com/youtube/v3/search?part=snippet%20&videoEmbeddable=true&type=video&key=${API_KEY}&q=${searchTerm}`
+}
+
+export const ytService = {
+    getYouTubeVideos
 }
