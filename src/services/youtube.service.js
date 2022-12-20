@@ -20,14 +20,14 @@ function getYouTubeVideos(txt) {
                 (item) => {
                     const id = item.id.videoId
                     const thumbnailUrl = item.snippet.thumbnails.default.url
-                    const title = item.snippet.title
-                    return { id, thumbnailUrl, title }
+                    const { title, description } = item.snippet
+                    return { id, thumbnailUrl, title, description }
                 }
             )
         }).then((res) => {
             // console.log('shorter results from YT:', res)
             ytCache[txt] = res
-            saveToStorage(YOUTUBE_RES_STORAGE_KEY, ytCache)
+            utilService.saveToStorage(YOUTUBE_RES_STORAGE_KEY, ytCache)
             return res
         }
         )
