@@ -1,5 +1,5 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
-import playListView from '../views/play-list.vue'
+import playListAppView from '../views/playlist-app.vue'
 
 const router = createRouter({
   history: createWebHashHistory(import.meta.env.BASE_URL),
@@ -11,7 +11,7 @@ const router = createRouter({
     {
       path: '/playlist',
       name: 'playlist',
-      component: playListView
+      component: playListAppView
     }
   ]
 })
