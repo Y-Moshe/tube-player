@@ -1,11 +1,39 @@
-.primary-btn {
-  border: 1px solid #0059ff9b;
-  background-color: #0059ff9b;
-  color: white;
-  transition: .3s;
+.play-btn {
+  background: red;
+  border-radius: 50% / 10%;
+  color: #FFFFFF;
+  font-size: 10px; /* change this to change size */
+  height: 3em;
+  margin: 20px auto;
+  padding: 0;
+  position: relative;
+  text-align: center;
+  text-indent: 0.1em;
+  transition: all 150ms ease-out;
+  width: 4em;
 }
 
-.primary-btn:hover {
-  background-color: white;
-  color: #0059ff9b;
+.play-btn::before {
+  background: inherit;
+  border-radius: 5% / 50%;
+  bottom: 9%;
+  content: "";
+  left: -5%;
+  position: absolute;
+  right: -5%;
+  top: 9%;
+}
+
+.play-btn::after {
+  border-style: solid;
+  border-width: 1em 0 1em 1.732em;
+  border-color: transparent transparent transparent rgba(255, 255, 255, 0.75);
+  content: ' ';
+  font-size: 0.75em;
+  height: 0;
+  margin: -1em 0 0 -0.75em;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  width: 0;
 }

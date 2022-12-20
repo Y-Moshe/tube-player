@@ -9,7 +9,7 @@
                 <h4 class="desc">{{video.description}}</h4>
             </div>
             <div>
-                <button @click="$emit('onPlay', video)" class="primary-btn">Play</button>
+                <button @click="$emit('onPlay', video)" class="play-btn">Play</button>
             </div>
         </div>
         
