@@ -34,6 +34,12 @@ export default {
   },
   created() {
     this.handleSearch = utilService.debounce(this.doSearch, 500)
+
+    // fetch at start with delay of 1s
+    setTimeout(async () => {
+      await this.doSearch('')
+      this.currentPlay = this.videos[0]
+    }, 1000)
   },
   methods: {
     async doSearch(query) {
