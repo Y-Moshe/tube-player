@@ -1,12 +1,3 @@
-<template>
-  <section class="search-bar">
-    <form @submit.prevent="handleSubmit">
-      <input type="search" placeholder="Search on YouTube..">
-      <button type="submit">Search</button>
-    </form>
-  </section>
-</template>
-
 <script>
 export default {
   props: {
@@ -14,3 +5,17 @@ export default {
   }
 }
 </script>
+
+<template>
+  <section class="search-bar">
+    <form @submit.prevent>
+      <input
+        class="form-control w-50"
+        type="search"
+        :modelValue="querySearch"
+        placeholder="Search on YouTube.."
+      >
+      <button type="submit" class="primary-btn">Search</button>
+    </form>
+  </section>
+</template>
