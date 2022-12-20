@@ -10,7 +10,7 @@
   margin-block: 50px;
 }
 
-.search-bar form {
+.search-bar {
   display: flex;
   gap: 20px;
   justify-content: center;
