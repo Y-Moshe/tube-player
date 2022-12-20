@@ -1,6 +1,17 @@
 @import './base.css';
+@import './helpers.css';
+
+@import './buttons.css';
+@import './forms.css';
 
 .main-layout {
   max-width: 1440px;
   margin-inline: auto;
+}
+
+.search-bar form {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
 }

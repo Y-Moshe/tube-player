@@ -2,3 +2,19 @@ a {
   color: inherit;
   text-decoration: none;
 }
+
+button,
+input {
+  border: none;
+  border-radius: 25px;
+  padding: 5px 10px;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:focus,
+input:focus {
+  outline: none;
+}
