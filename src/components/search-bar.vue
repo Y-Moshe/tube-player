@@ -2,20 +2,24 @@
 export default {
   props: {
     querySearch: String
+  },
+  methods: {
+    handleChange({ target }) {
+      this.$emit('update:modelValue', target.value)
+      this.$emit('change', target.value)
+    }
   }
 }
 </script>
 
 <template>
   <section class="search-bar">
-    <form @submit.prevent>
-      <input
-        class="form-control w-50"
-        type="search"
-        :modelValue="querySearch"
-        placeholder="Search on YouTube.."
-      >
-      <button type="submit" class="primary-btn">Search</button>
-    </form>
+    <input
+      type="search"
+      class="form-control w-50"
+      :modelValue="querySearch"
+      placeholder="Search on YouTube.."
+      @input="handleChange"
+    >
   </section>
 </template>

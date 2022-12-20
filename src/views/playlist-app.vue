@@ -10,7 +10,8 @@
 </template>
 
 <script>
-import { ytService} from '../services/youtube.service'
+import { utilService } from '../services/util.service'
+import { ytService } from '../services/youtube.service'
 
 import videosList from '../components/videos-list.vue'
 import searchBar from '../components/search-bar.vue'
@@ -27,12 +28,15 @@ export default {
     return {
       querySearch: '',
       videos: [],
-      currentPlay: null
+      currentPlay: null,
+      handleSearch: null
     }
   },
+  created() {
+    this.handleSearch = utilService.debounce(this.doSearch, 500)
+  },
   methods: {
-    async handleSearch({ target }) {
-      const query = target.value
+    async doSearch(query) {
       console.log('query', query)
       const videos = await ytService.getYouTubeVideos(query)
       console.log('videos', videos)
