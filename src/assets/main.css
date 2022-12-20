@@ -19,8 +19,12 @@
 
 .videos-container {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   margin-block: 25px;
+}
+
+.video-player {
+  grid-row: 1;
 }
 
 .video-preview-container {
@@ -34,4 +38,12 @@
   margin-top: 0;
 }
 
+@media (min-width: 768px) {
+  .videos-container {
+    grid-template-columns: 1fr 1fr;
+  }
 
+  .video-player {
+    grid-row: unset;
+  }  
+}
