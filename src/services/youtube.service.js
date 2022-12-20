@@ -2,7 +2,7 @@ import axios from 'axios'
 
 import { utilService } from './util.service'
 
-const API_KEY = process.env.GOOGLE_TY_API_KEY
+const API_KEY = import.meta.env.VITE_GOOGLE_TY_API_KEY
 const YOUTUBE_RES_STORAGE_KEY = 'ytCache'
 
 const ytCache = utilService.loadFromStorage(YOUTUBE_RES_STORAGE_KEY) || {}
