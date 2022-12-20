@@ -1,9 +1,0 @@
-.form-control {
-  border-width: 1px;
-  border-bottom: 1px solid #0059ff9b;
-  transition: .3s;
-}
-
-.form-control:focus {
-  border: 1px solid #0059ff9b;
-}
