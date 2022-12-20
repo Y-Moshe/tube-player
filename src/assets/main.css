@@ -7,6 +7,7 @@
 .main-layout {
   max-width: 1440px;
   margin-inline: auto;
+  margin-block: 50px;
 }
 
 .search-bar form {
