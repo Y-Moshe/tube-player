@@ -3,7 +3,7 @@
         <h1>video list</h1>
         <ul class="video-list clean-list">
             <li v-for="video in videos">
-                <video-preview :video="video" :key="video.id"/>
+                <video-preview @onPlay="$emit('play', $event)" :video="video" :key="video.id"/>
             </li>
         </ul>
     </section>
@@ -20,6 +20,7 @@ export default {
            
         }
     },
+ 
     components: {
         videoPreview
     }
